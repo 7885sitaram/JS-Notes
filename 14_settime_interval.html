@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set timeout interval</title>
+</head>
+<body>
+    <h1>Set timeout and setInterval in js </h1>
+</body>
+
+<script>
+    // set time out is not part of js its part of browser part 
+    // in set time out you cannot enter string or direct value you pass js code 
+    // set timeout is take js code and run on another file and give output
+    
+    const num = 54
+    setTimeout('console.log("hello")')
+    setTimeout('console.log(num)')
+
+    // set time out take 2 input one is our code and another is delay in milisecond
+
+    setTimeout('console.log("my name is sitaram")' , 1000)
+    // for write in multi line use back tick ``
+
+    setTimeout(`console.log("heloo")
+    console.log("my name is sitaram");` , 500)
+
+    // cleartimeout(timer-Id) is break the excuation of next settimeout
+    // to fetch the timer id strore in variable 
+
+    const time1 = setTimeout('console.log("INDIA")' , 1000)
+    const time2 = setTimeout('console.log("UK")' , 2000)
+    const time3 = setTimeout('console.log("DUBAI")', 3000)
+
+    // clearTimeout(time1)
+    // clearTimeout(time2)
+    clearTimeout(time3)
+
+    // in this the time id is store in time3 so cleartime out not excuate time3 
+
+    // higher function 
+
+    function greet(){
+        console.log("hello i am sitaram");
+        
+    }
+
+    setTimeout(greet , 4000)
+
+    console.log("program ended");
+
+    // setinterval 
+    // setinterval mean they excuate continious in set interval 
+
+    const x = setInterval('console.log("setinterval")', 1000)
+    // if we want to stop use clearinterval 
+
+    // clearInterval(x)
+
+    // higher order function 
+
+    function say(){
+        console.log("higher function")
+    }
+
+    // setInterval(say , 1000)
+
+</script>
+</html>

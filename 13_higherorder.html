@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Order function</title>
+</head>
+<body>
+    <h1>Higher order function on js </h1>
+    
+</body>
+
+<script>
+    function greet(msg){
+
+        console.log(msg);
+    }
+
+    greet('sitaram')
+    greet({name : 'jigs' , age : 20})
+    greet([1020,30,40,50])
+
+    // higher order function 
+    function a(b){
+        console.dir(b);
+        b()
+    }
+
+    function hi(){
+        console.log("hiiiiiiiiiiiiii");
+    }
+
+    a(hi)
+    
+    // callback function : jab kisi function ko call krte time dusre function ko pass krte he to jis function ko pass liya jata he usko call back function kaha jata he 
+    // aor jis function me paSS kita ja rha he usko higher order function kha jata he 
+
+    // callback function
+    a(function(){
+        const a = 10
+        const b =5
+
+        console.log(a + b);
+    })
+</script>
+</html>

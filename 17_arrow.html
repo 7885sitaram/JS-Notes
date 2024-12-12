@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow function</title>
+</head>
+<body>
+    <h1>Arrow function in js</h1>
+</body>
+<script>
+    const square = (num)=>{
+        return num*num
+    }
+
+    // in this we can right without return 
+
+    const sqrt = (num) => num*num 
+    console.log(sqrt(4));
+
+    // it is suitable for call back function 
+
+    setTimeout(() => {console.log('hello');} , 2000)
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function vs method</title>
+</head>
+<body>
+   <h1>Function vs methods </h1> 
+</body>
+<script>
+    // in this every function are not method but every method are function
+    
+    // this is function 
+    function add(a , b){
+        return a + b 
+    }
+
+    // when we put function in a object they being method
+
+    const maths = {
+        E: 2.718281828459045, 
+
+        add : function (a , b){
+        return a + b 
+        },
+
+        sub:function(a, b) {
+            return a - b 
+        },
+
+        sqrt: function(num ){
+            return num*num
+        },
+        // it is also valid new features
+        cube(c){
+            c**3
+        }
+    }
+
+    console.log(maths.add(10,5));
+    console.log(maths.sub(10,5));
+    console.log(maths.sqrt(4,3));
+
+    // now above all function are is method of maths object 
+
+</script>
+</html>

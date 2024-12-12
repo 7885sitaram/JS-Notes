@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For of & for in</title>
+</head>
+<body>
+    <h1>For of and for in in js</h1>
+</body>
+<script>
+
+    const fruit = ['apple' , 'mango' , 'cherry', 'grapes']
+
+    // for of is use for acces iterable element like in array 
+
+    for(const i of fruit){
+        console.log(i);
+    }
+
+    const str = "sitaram"
+
+    for(const s of str){
+        console.log(s);
+    }
+
+    // for of is not apply on object 
+
+    const person = {
+        name : "raghav",
+        age : 30,
+        height : 5.5,
+        gander : "male"
+
+    }
+
+    // for(const p of person){
+    //     console.log(p);
+    // }
+
+    // object is not iterable so in this case we use for in loop
+    // for in loop is to traverse element of object 
+
+     for(const p in person){
+        console.log(p);
+    }
+
+    for(const p in person){
+        console.log(p ,':', person[p]);
+    }
+
+    // suitable way is 
+
+    console.log("\n\n");
+
+    const person_key = Object.keys(person)
+    const person_val = Object.values(person)
+    const person_both = Object.entries(person)
+
+    for(const k of person_key){
+        console.log(k);
+    }
+
+    for(const v of person_val){
+        console.log(v);
+    }
+
+    for(const b of person_both){
+        console.log(b);
+    }
+
+
+    // for each method : this is array mehod 
+
+    const car = ['BMW', 'HONDA', 'TOYOTA' , 'MERCEDIESE', 'HYUANDAI']
+    
+    // for each is a higher order function take pera as a function and call the number of array element 
+
+    car.forEach(function(x){
+        console.log(x);
+    })
+    // using arrow function 
+
+    car.forEach((x) => {console.log(x);})
+
+    // for each have not any return value because you give call back function return value not for each function 
+
+    car.forEach((x) => {console.log(x.toLowerCase());})
+
+
+</script>
+</html>

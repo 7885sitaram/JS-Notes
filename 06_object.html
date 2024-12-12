@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparisition in js</title>
+</head>
+<body>
+    <h1>Welcome to object in js </h1>
+</body>
+
+<script>
+
+    // non premetive datatype call object
+    const user = {
+        name : "sitaram",
+        age : 20
+    }
+
+    const user2 = {
+        name : "sitaram",
+        age : 20
+    }
+    
+    console.log(user === user2);
+    // in object 2 object memory address are not same
+    // premetive datatype have same address in memory if the value are same but in object address are not same value same 
+    console.log(user);
+    console.log(user.name);
+
+    // access method 
+    const my_name = "username"
+
+    const person = {
+        username : "jigs",
+        age : 25,
+        city : "ahmedabad",
+        "name" : "jaymin"
+    }
+
+    console.log(person);
+    console.log(person.username);
+    console.log(person["username"]);
+    console.log(person["user" + "name"]);
+
+
+    // diff betyween . and []
+    // using []  access variable and expression and usimg . we acces local key of object
+    
+    // update the object
+
+    console.log(person.isMrd = "true");
+    console.log(person["is-stu"] = "true");
+    console.log(person);
+    console.log(person.isMrd);
+
+    // nested object 
+
+    const obj = {
+        name : "mahesh",
+        age : 45,
+        address : {
+            state : "gujrat",
+            pincode: 385-340,
+            dist : "patan"
+
+        },
+
+        lastname : "prajapati"
+
+    }
+    
+    console.log(obj);
+    console.log(obj.address);
+    console.log(obj.address.dist);
+    console.log(obj.address["home_no"] = 190);
+    console.log(obj.address);
+
+    // in object every new object create new address in memory 
+
+    // object.freeze() & object.seal()
+    // in object we can change const so in this we modify our value in const variable not change the const variable so object can be modify const variable 
+
+    const hist = {
+        name : "surya",
+        age : 50
+    }
+    
+    console.log(hist);
+    console.log(hist.name = "pinky");
+    console.log(hist);
+
+
+    // but we can not change the variable give error 
+    // hist = {}
+
+    // using let we can modify everything 
+    console.log("\n\n");
+    let hist2 = {
+        name : "surya",
+        age : 50
+    }
+    console.log(hist2);
+    hist2= {}
+    console.log(hist2);
+
+    // delete the value 
+    console.log(delete hist.age);
+    console.log(hist);
+
+    // so we can prevent modify the valyue of object 
+    console.log("\n\n");
+    // object.seal() is prevent the value add or delete they seal the value but also in this we can modify 
+
+    Object.seal(obj)
+    console.log("===========");
+    console.log(delete obj.address);
+    console.log(obj);
+    console.log(obj.name = "ganpat");
+    console.log(obj);
+
+    // using object.freeze() we can freeze the object cannot add delete modify the values
+
+    Object.freeze(obj)
+    
+    console.log(delete obj.address); 
+    console.log(obj);
+    console.log(obj.name = "mahesh");
+    console.log(obj);
+   
+</script>
+</html>

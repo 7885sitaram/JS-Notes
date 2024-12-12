@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math in js</title>
+</head>
+<body>
+
+    <h1>welcome yo math js</h1>
+    
+</body>
+
+<script>
+    // aerithmetic operation like + , - , * , / %, ** (exponention)
+
+    // js have math library 
+
+    console.log(Math.SQRT2);
+    console.log(Math.E);
+    console.log(Math.PI);
+
+    // methods
+
+    console.log(Math.sqrt(4));
+    console.log(Math.pow(4, 2));
+
+    // math.floor convert point to floor value small value
+
+    console.log(Math.floor(5.54));
+    console.log(Math.floor(-3.5));
+
+    // math.ceil convert point to ceil value -- higher value
+
+    console.log(Math.ceil(2.4));
+    console.log(Math.ceil(-3.2));
+
+    // math.round is combination of floor and ceil 50% above apply ceil and below apply floor 
+
+    console.log(Math.round(3.7));
+    console.log(Math.round(3.3));
+
+    // math.random generate random number between o to 1 but exclude 1 [0,1)
+
+    console.log(Math.random());
+    console.log(Math.random()*10);
+    // for range in decimal number
+    console.log(Math.round(Math.random()*10));
+
+    // some keyword 
+    
+    n = 8/0
+    console.log(n);
+    console.log(typeof(Infinity));
+
+    let length = prompt("Enter length")
+    let width= prompt("Enter Width")
+
+    let res = length * width
+    console.log(res);
+
+    // to display on web site 
+    document.write(`Area of rectangle is ${res}`)
+
+    // ********************************************
+
+    // comparision operator like: == , ===, < , <= , >= , !=, !==
+
+    let num = 18
+    let num2 = 24
+    let c = num
+    let d = '24'
+
+    // equal is check the value and convert the type implicit conversion not check the datatype 
+
+    console.log(num == num2);
+    console.log(c == num);
+    console.log(d == num2);
+
+    // === is strictkly check the value and also datatype
+    console.log("\n\n");
+    console.log(num === num2);
+    console.log(c === num);
+    console.log(d === num2);
+
+    console.log(num != num2);
+    console.log(d !== num2);
+
+</script>
+</html>

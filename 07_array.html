@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    <h1>array in js </h1>
+</body>
+
+<script>
+    // in js array are store the multi type data string number boolean etc in one frame and store usig index 
+    // ttype of array is object
+    // array are mutuable
+
+    const fruit = Array("apple", "mango" , "banana" , "cherry")
+    console.log(fruit);
+
+    const arr = [10,20,30,40,50, "sitaram" , true]
+    console.log(arr);
+    // access
+    console.log(arr[2]);
+    // update 
+    console.log(arr[2] = 100);
+    console.log(arr);
+    // add 
+    let k = arr[7] = "prajapati"
+    console.log(arr);
+    // length
+    console.log(arr.length);
+
+    console.log(arr[10]);
+    console.log(arr[10] = "end");
+    console.log(arr);
+
+    // using this we can append element 
+    console.log(arr[arr.length] = "hi");
+    console.log(arr);
+
+    // using push we can append element 
+
+    const num = [10,20,30]
+    console.log(num.push(40, 50, 60));
+    console.log(num);
+
+    // using pop we can remove the element 
+
+    console.log(num.pop());
+    console.log(num.pop());
+    console.log(num.pop());
+    console.log(num);
+
+    console.log("Array methods \n\n");
+
+    // array methods : push , pop , shift , unshift , concat , indexof , includes , reverse , sort , slice , splice 
+
+    const number = [10,20,30, 40 , 50]
+    // shift:remove element from starting 
+    console.log("++++");
+    console.log(number.shift());
+    console.log(number);
+    console.log(number.shift());
+    console.log(number);
+
+    // unshift add element at starting 
+    console.log(number.unshift(0));
+    console.log(number);
+    console.log(number.unshift(20));
+    console.log(number);
+
+    const a = [1,2,3,4]
+    const b = [5,6,7,8]
+    // concat merge 2 array and cannot affect origional array
+
+    console.log(a.concat(b));
+
+    // indexof is use for return index of first occurence 
+    const animal = ["dog" , 'cat' , 'lion', 'tiger', 'dog']
+    console.log(animal.indexOf('dog'));
+    // include return true or false value contain or not 
+    console.log(animal.includes('cat'));
+    
+    // reverse 
+    console.log(a.reverse());
+    
+    // sort
+    const s = [ 40,80,10,20,90,70,100] 
+    console.log(s.sort());
+
+    // slice : is use for display(slice) perticuler value not modify origional array  
+    // slice have start and end value start value are include and end value are exclude 
+    console.log(animal.slice(2));
+    console.log(animal.slice(1,4));
+
+    // splice is use for remove have start value after all values are remove
+    //** diff between slice and splice is slice is not affect origional array and splice affect the origional array
+    
+    const m = [10 , 20 , 30 , 40 , 50 ,60 , 70]
+    // console.log(m.splice(4));
+    console.log(m);
+    console.log(m.splice(3,3,  "ram", 'shyam'));
+    console.log(m);
+
+    // multi dimensitional array 
+    const d = [[['x'],[],[]],
+              [[],[],['o']],
+              [['o'],[],['x']],] 
+
+              console.log(d);
+              console.log(d[0][0]);
+              console.log(d[1][2]);
+              
+</script>
+</html>

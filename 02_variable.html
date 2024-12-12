@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable in js</title>
+</head>
+<body>
+    
+    <h1>Variable in js</h1>
+</body>
+
+<script>
+    // variable can be define in 3 way 1.let 2.var 3.const
+    // js use camle case ex. userIntro
+    // pascal case ex. First_Name
+    // also have an snake case ex user_name
+    // kabab space ex. user-name
+
+
+    let name = "sitaram"
+    let age = 25
+    let username = name 
+
+    console.log("hi i am " + username);
+
+    // using let and var we can change our value 
+    // but in const we can not modify our value and in const we can not use undefine initialise is must
+
+    const pai = 3.14
+    // const p
+
+    // pai = 2.45
+
+    console.log(pai)
+
+    // var is not so usefull not recomonded
+
+    var firstName = "rahul"
+    // var have global scope amd let & const have block scop acces in scope
+
+    {
+        var p = "ram"
+    }
+
+    {
+        let q = "shyam"
+        // not access out of scope
+        // console.log(q)
+    }
+
+    console.log(p)
+    // console.log(q)
+
+
+    // diff between let and var 
+    // let is block scope and var is global scope 
+    // print variable before initilisation var give undefine where let give error like not you have acces before initilise (not define)
+
+     console.log(var_count);
+    //  console.log(let_count);
+   
+    let let_count = 100
+    var var_count = 200
+
+    // rules for variable declearation 
+    // 1. not use of special charecter except $ and _ 
+    // 2. not start with digit
+    // 3. space are not allow
+    
+    // another example
+
+    let num = 50
+    var number = 100
+    
+    console.log("the num before scope " + num);
+    console.log("the number before scope " + number);
+   
+    {
+        var number = 110
+        let num = 100
+        console.log("the num inside the sciope " + num);
+    }
+    
+    console.log("the num after scope " + num);
+    console.log("the number after scope " + number);
+
+</script>
+</html>

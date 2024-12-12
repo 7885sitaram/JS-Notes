@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+<body>
+    <h1>Scope in js </h1>
+</body>
+
+<script>
+
+    // in this name and age are global scope they acces everywhere in program but in scope or function variable are local varible are not accessiable everywhere in program they acces only in scope 
+
+    const name = "sitaram"
+    const age = 20
+    var a = 10
+
+    function add(){
+
+        const a = 10
+        const b = 5 ; 
+        console.log(a + b );
+
+    }
+
+    add()
+
+    // console.log(a);
+
+    console.log("program ended");
+
+    // in this have part of global are parent and have 2 type window object and and script let and const are in script and var & function are in window object 
+
+    // when function creat they create local scope and whenefunction close the local scope destroy 
+
+    //********* lexical and block scope
+    
+    function subs(){
+
+    const a = 10
+    const b = 5 ;
+    const z = 50
+
+    console.log(a - b );
+
+    function child(){
+        const child = "golu"
+        console.log(child);
+    }
+
+    // block scope mean the variable are acces only in block scope except var var acces anywhere but const and let are acces omly in block scope  
+
+    if(1){
+        let g = 100
+        console.log(g);
+        var v = 550
+    }
+
+    // console.log(g);
+    console.log(v);
+
+    child()
+
+    function grandChild(){
+        const grandName = "molu"
+        console.log(grandName);
+    }
+
+    grandChild()
+
+    }
+
+    subs()
+
+    // in this in function if you create var but not use but show in debugger but function  not display without calling 
+
+    // lexical scope : lexical scope mean inner function have own scope parents scope up to global scope call lexical scope in eg. grandchild acccs own value , child scope , subs scope up to global scope 
+
+    // where you declare the variable without var let const they assign in window object and acces out side of function but this is not good practice so use "use strict" mode in js 
+   
+
+</script>
+</html>

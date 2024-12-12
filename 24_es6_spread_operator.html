@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread operator</title>
+</head>
+<body>
+    <h1>ES - 6 Spread Operator in js </h1>
+</body>
+<script>
+    // spread operator use for addind arrays 
+    
+    const num1 = [1,2,3,4]
+    const num2 = [5,6,7,8]
+
+    const join = num1.concat(num2)
+    console.log(join);
+
+    // using spread operator 
+
+    const sp = [...num1,...num2, 10]
+    console.log(sp);
+
+    // in string 
+
+    const str1 = "sitaram"
+    const str2 = "prajapati"
+
+    const res = [...str1, ...str2]
+    console.log(res);
+
+    // in object 
+    const person1 = {
+        name : 'sitaram',
+        age : 20
+    }
+
+    const update = {...person1 , city:'ahmedabad' , salery:500000}
+
+    // in this spred operator are use for update the object not for concat
+
+    const res2 = {...update}
+    console.log(res2);
+
+    // in argument 
+
+    function add(){
+        console.log(arguments);
+        let sum = 0 
+        for(let i = 0; i < arguments.length; i++){
+            sum = sum + arguments[i]
+        }
+        return sum 
+    }
+    
+     console.log("+++++");
+    const res3 = add(...sp)
+    console.log(res3);
+
+    // in this you only put array or string iterable values not add object 
+
+    const s = 'sitaram'
+    const s1 = 'prajapati'
+    const n = [1,2,3,4,5,]
+    const n1 = [6,7,8,9]
+
+    console.log([...s,...s1]);
+    console.log(s.concat(s1));
+    console.log([...n,...s,...n1,...s1]);
+
+
+</script>
+</html>

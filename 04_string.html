@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Method</title>
+  </head>
+  <body>
+    <h1>welcome to string method</h1>
+  </body>
+
+  <script>
+    // string is immutable we can not chamge origional string they give copy of modify string
+    let massage = "hi my name is sitaram";
+    console.log(massage);
+    console.log(massage[0]);
+    console.log(massage[10]);
+
+    // .length return length of string and in this we can not write ()
+    console.log(massage.length);
+
+    // method of string without argument
+    console.log(massage.toUpperCase());
+
+    let s = "JAYMIN";
+
+    console.log(s.toLowerCase());
+    console.log(s);
+
+    // trim
+
+    let t = "    hi my name is sitaram    ";
+
+    console.log(t);
+    console.log(t.trim());
+    console.log(t.trimStart());
+    console.log(t.trimEnd());
+
+    // method of string with argument
+
+    let msg = "hi i am ram";
+
+    console.log(msg);
+    // include() check the word contain in string or not
+    console.log(msg.includes("ram"));
+    console.log(msg.includes("x"));
+
+    // indexof() is return first occure index number of user input uf the user input not available in string than return -1 index
+
+    console.log(msg.indexOf("ram"));
+    console.log(msg.indexOf("z"));
+
+    // replace is use for change the value occure first
+
+    console.log(msg.replace("ram", "shyam"));
+
+    // replace all for multiple position but value change
+
+    console.log(msg.replaceAll("m", "M"));
+
+    // concAT IS USE FOR ADD 2 string
+
+    let a = "sitaram m";
+    let b = "prajapati";
+
+    console.log(a + " " + b);
+    console.log(a.concat(" ", b));
+
+    // padstart() is use for show last 4 digit or string
+
+    const ac = "9899";
+    console.log(ac.padStart(16, "*"));
+    console.log(ac.padEnd("16", "$"));
+
+    // charAt() is return charecher at index
+    // charcodeat() is return ascaii value
+
+    console.log(a.charAt(3));
+    console.log(a.charCodeAt(3));
+
+    // split():no add parameter
+
+    console.log(a.split());
+    console.log(a.split(""));
+    console.log(a.split(" "));
+
+    // string templet litreals
+
+    const str = `last for digit of my `;
+
+    console.log(str);
+    console.log(str.concat(ac, " number is"));
+
+    // using tamplet literals
+
+    console.log(`my IU number is ${ac}`);
+    console.log(`my IU number is ${ac.padStart(16, "*")}`);
+  </script>
+</html>

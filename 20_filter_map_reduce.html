@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Map Reduce</title>
+</head>
+<body>
+    <h1>Filter Map Reduce in js </h1>
+</body>
+<script>
+
+    // Map
+    // map vs for each so in this for each not have any return value always show undefine but map return array as a return value if you give return value they return in array and not give return value than they give undefine array 
+
+    const day = ['sunday' , 'monday', 'tuesday', 'wednesday', 'thurseday']
+
+    day.map(function(x){
+        console.log(x);
+    })
+
+    // same as a for each method but in map you provide return value 
+
+     const e = day.map((x) => {
+        console.log(x);
+        return x.toUpperCase()
+    })
+    console.log(e);
+
+    // if you want to show return value
+    // if you provide return value they return in array and not provide return value than they return array of undefine 
+
+    console.log("\n\n");
+    // i is show index
+    const ret = day.map((x, i) => {
+        console.log(i , x);
+        return x.toUpperCase()
+    }) 
+
+    console.log(ret);
+
+    // map is use for broadcasting 
+
+    const num = [10,20,30,40,50]
+
+    num.map(function(x){
+        console.log(x + 10);
+
+    })
+
+    // filter 
+    // in filter return value based on truthly falsely value if return is true they display all our element and if return false value they return empty array 
+
+    console.log("\n");
+    const res =  num.filter(function(x){
+        console.log(x);
+        return 1
+
+    })
+
+    console.log(res);
+
+    // filter check condition and print only true value
+    const num2 = [1,2,3,4,5,8,7,9,10]
+    console.log("\n");
+    const res2 = num2.filter(function(x){
+        return x % 2 == 0
+
+    })
+
+    console.log(res2);
+
+    const student = [
+        {
+            name : 'sitaram',
+            age : 10
+        },
+
+        {
+            name : 'shyam',
+            age : 20
+        },
+
+        {
+            name : 'radha',
+            age : 14
+        },
+
+        {
+            name : 'mahesh',
+            age : 15
+        },
+    ]
+
+    const res3 = student.filter(function(s){
+        // console.log(s.age >= 18);
+        // return s.age >= 18
+
+        return s.name == "sitaram"
+    })
+
+    console.log(res3);
+
+    // map and filter parameter 
+    const fruit = ['apple' , 'mango' , 'cherry', 'grapes']
+
+    res4 = fruit.map(function(element , index , array){
+        console.log(index , element , array);
+    })
+
+    // reduce 
+    // in reduce they start wiith 1 index not start at 0 index element if you want start with 0 element than put random value 
+    const car = ['BMW', 'HONDA', 'TOYOTA' , 'MERCEDIESE', 'HYUANDAI']
+    const res5 = car.reduce(function(accumulator , element , index , array){
+        console.log(index , element);
+    },4) 
+
+    // if you want to use accumulator 
+
+    const number = [1,3,2,5]
+
+    const z = number.reduce(function(accumulator , element , index , array){
+        console.log( accumulator  + element);
+        return accumulator  + element
+    },0)
+    // if you not give accumulator value than they take first element of array
+
+    function sum(total , num){
+        console.log(total);
+        return total + num
+    }
+    const n = [10,20,30,40]
+    console.log("\n");
+    const y = n.reduce(sum , 0)
+    console.log(y);
+   
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hosting</title>
+</head>
+<body>
+    <h1>Hosting in js </h1>
+</body>
+
+<script>
+    // hosting is very imp in js interview and hosting is not declare in ecma script but it is consider by the developer and ask in interview
+
+    // hosting: hosting meanm if you declare a variavle and print these variable before declaration and not give any error call host variable -->hosting 
+
+    // in const & let case also undefine in memory phase but the js put into the temporal dead zone (give error before initilization) 
+  
+    // debugger
+    console.log(a);
+    // console.log(b);
+    var a = "sitaram"
+    // const b = 20
+
+    // in function case they host properly and give output
+
+    greet()
+    // function declaration
+    function greet(){
+        console.log("nice to meet you ");
+    }
+
+    // function method 2 using variable 
+    // in this using the varible we create function the function treated as a variable so in this give error not hosted 
+
+    sayhi()
+    // function expression
+    const sayhi = function(){
+        console.log("hello");
+    }
+
+    // in function , function expression and function declaration both are function definition we have 2 method for function definition 1.function declaration nd function expression 
+    // so the function expression cannot host and function declaration can be host properly 
+
+    // when we cannot give name to function call anonymous function (IIFE)
+
+   
+</script>
+</html>

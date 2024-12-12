@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callstack</title>
+</head>
+<body>
+    <h1>Callstack in js </h1>
+</body>
+
+<script>
+
+    // call stack is mechanisam in js they track the line by line record which line excuted in function at which location using call stack and call stack is like stack data structure LIFO  concept use 
+
+debugger
+    
+    intro();
+
+    const name = "sitaram"
+    const age = 20
+    console.log(name);
+
+    function intro(){
+        const x = 10
+        const y = 5
+        console.log("hello");
+
+        add(14,6)
+    }
+
+    function add(a , b){
+        conclusion()
+        return a + b
+       
+    }
+
+    function conclusion(){
+        console.log("here end of all function");
+    }
+
+    console.log("program ended");
+
+    // stack overflow : when we use recurdion the function call itsself without any base cases or limit the call stack create the stack amd oncr upon the stack limit is full and call stack overflow 
+
+    function greet(){
+        console.log("nicr to meet you");
+        greet()
+    }
+
+    // greet()
+</script>
+</html>

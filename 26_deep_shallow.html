@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep & Shallow copy</title>
+</head>
+<body>
+    <h1>Deep & Shallow copy in js </h1>
+</body>
+<script>
+    // so in this in premetive datatype the memory address are same if the values are same and in below reletion 
+    const name = "sitaram"
+    const name2 = name 
+
+    // in non premetive datatype same value have not assign same memory addres if variable name are different but below reletion we can assign same same address in object datatype 
+
+    console.log(name2);
+    const fruit = ['apple', 'banana', 'mango']
+
+    const myFruit = fruit
+
+    myFruit.push('dates', 'cherry')
+    console.log(fruit);
+    console.log(myFruit);
+
+    const user = {
+        name : 'sitaram',
+        age : 20
+    }
+
+    const user2 = user
+    
+    user2.salerry = "5000"
+
+    console.log(user);
+    console.log(user2);
+
+    // so in this we can only modify the values not the object 
+    // user2 = {}
+
+    // so if we want to modify object using object,assign and they have new address in memory 
+
+    const person1 = {
+        name:'jigs',
+        age : 22,
+    }
+
+    const person2 = {}
+
+    Object.assign(person2 , person1)
+    console.log(person2);
+    person2.salery = 25000
+    console.log(person2);
+    console.log(person1);
+    console.log("+++++");
+    // // have some methods 
+
+    // const  person2 = [].concat(person1)
+    // console.log(person2);
+
+
+    //so in this we can change individually not affect another object but object.assign are old not in use in letest demand use es6-spread operator
+    
+    const std = {
+        name : "raghav",
+        id : 88,
+        class : 'A'
+    }
+
+    const std2 = {...std, city:'ahmedabad'}
+
+    console.log(std);
+    console.log(std2);
+
+    // if we modify std2 than only affect std2 object 
+
+    // in this if we create nested object than the outer object have diff address but nested object have same address so we modify nested object than they affect both object so this is call shallow copy they only copy one layer
+    
+    const profile1 =  {
+        name : 'jaimin',
+        age : 25 ,
+        pin : 451585,
+
+        add : {
+           state : 'gujrat',
+           city : 'ahmedabad',
+           income : 9999999999999
+        }
+
+    }
+
+    profile2 = {...profile1 }
+    console.log(profile1);
+    console.log(profile2);
+
+    profile2.name = "sitaram"
+     console.log("*****");
+    console.log(profile1);
+    console.log(profile2);
+
+    profile2.add.city = "patan"
+
+    console.log(profile1);
+    console.log(profile2);
+
+    //    so in this the name are not affect the both object because they are not in nested object but the address are affect both the object because they are in nestred object and shallow copy are copy only one layer not apply nested object if we want nested copy than apply deep copy 
+
+
+    // deep copy ???
+
+    var profile2 = JSON.parse(JSON.stringify(profile1));
+
+     profile2.add.city = "surat"
+     console.log("****");
+     
+    console.log(profile1);
+    console.log(profile2);
+    
+
+</script>
+</html>

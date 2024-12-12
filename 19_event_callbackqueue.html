@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event & Callback</title>
+</head>
+<body>
+    <h1>Event and Call back queue in js </h1>
+</body>
+
+<script>
+//    debugger
+   console.log("hi-1");
+   console.log("sitaram");
+
+   setTimeout(function(){
+    console.log("inner of settimeout");
+   }, 0)
+
+   console.log("program ended");
+
+    //    for more info check the loupe website 
+    // in this journey the settimeout are ignore by the debugger  not excute even 0 second delay the compiler scn the code if timeout appear they simply ignore and run away 
+    // after this the timeout function go into web apis section and they scan the delay time and than web apis send timeoutfunction into the call back queue and than when the compiler complete the scan and call stack are empty the event loop active
+    // event loop is interface between the call back queye and call stack like bodyguard they check the condition if the call stack are empty and some code are in callback queue than they delevered in to call stack and at the last moment the time out function excuate after the code compilation
+    // and this proccess call ascnchrounous code  
+
+    
+</script>
+</html>

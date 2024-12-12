@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest pera</title>
+</head>
+<body>
+    <h1>Rest perameter in js </h1>
+</body>
+<script>
+    // rest perameter is like argument take infinity number of argument 
+    const num1 = [1,2,3,4,5,6,7]
+    
+    // here ...nums are rest perameter and they convert argument into the array  
+    function add(...nums){
+        console.log(nums);
+        let sum = 0
+        for(let i =0; i < arguments.length ; i++){
+            sum = sum + arguments[i]
+        }
+        return sum 
+    }
+
+    console.log(add(4,5,7,8));
+
+    // diff between rest and spread is rest pera is convert value into array and spread operator is converty array to value they spread the values
+    
+    function add(a , b ,c ,...nums){
+        console.log(a , b , c);
+        console.log(nums);
+ 
+    }
+
+    add(...num1)
+
+    // so you see the ...nums pera is convert value into array and a , b spread operatoe spread the values
+    // catch is the rest pera is define in at the last not define middle or first they give error  
+
+    // ex using reduce method 
+
+    function add(...nums){
+        console.log(nums);
+        const res = nums.reduce(function(acc , ele, i , array){
+            // console.log(acc);
+            return acc + ele
+        }, 0)
+
+        console.log(res);
+    }
+
+    console.log('*****');
+    add(...num1)
+
+    // another diff is rest pera is define in function perameter and spred operator is define in function arguments
+</script>
+</html>

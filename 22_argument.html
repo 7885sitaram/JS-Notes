@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Argument</title>
+  </head>
+  <body>
+    <h1>Argument in js</h1>
+  </body>
+  <script>
+    // argument is a feature in js they record all the argument in function
+
+    // function add(a , b){
+    //     console.log(arguments);
+    //     return a + b
+    // }
+
+    // sum = add(2,5)
+    // add(2,5 , 3)
+    // const sum = add(2,5 , 8 , 10)
+    // console.log(sum);
+
+    // we can create function infinity number of argument pass with zero number of perameter
+
+    function add() {
+      let sum = 0;
+
+      for (let i = 0; i < arguments.length; i++) {
+        sum = sum + arguments[i];
+      }
+
+      return sum;
+    }
+    console.log(add(4, 5, 7, 8, 5));
+
+    // argument are not working in arrow function
+
+    const add2 = () => {
+      let sum = 0;
+      for (let i = 0; i < arguments.length; i++) {
+        sum = sum + arguments[i];
+      }
+      return sum;
+    };
+
+    // console.log(add2(5,2));
+
+    // convert argument into array
+    function array() {
+      let arr = [];
+      var sum = 0;
+      for (let i = 0; i < arguments.length; i++) {
+        sum = arr.push(arguments[i]);
+      }
+
+      return arr;
+    }
+
+    const x = array(4, 5, 7, 10, 45);
+    console.log(x);
+
+    // now apply reduce method
+
+    const red = x.reduce(function (acc, ele, i) {
+      // console.log(ele);
+      return acc + ele;
+    }, 0);
+
+    console.log(red);
+
+    function test(a, b, c) {
+      let sum = 0;
+
+      return a + b + c;
+    }
+
+    const ot = test.apply(null, [1, 2, 3]);
+    console.log("====ot====");
+    console.log(ot);
+
+  </script>
+</html>

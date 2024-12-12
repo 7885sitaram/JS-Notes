@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some & Every</title>
+</head>
+<body>
+    <h1>Some and every in js </h1>
+</body>
+<script>
+
+    // some
+    // in some return value concept is return true or false based on truthly and falsy value and in array one value are true than return value is true all value false than return false 
+
+    // in some method scan the array based on the return value and than if the condition matched they stop scanning and give return value true not move ahed and if whole array not match the return condition return value give false 
+
+    const even = [0,2,4,5,6,8]
+
+    const s = even.some((num , i , array) =>{
+        console.log(num);
+        // return 2
+        // return 'sitaram'
+        // return null
+        // return num > 4 
+        return num % 2 != 0
+    })
+
+    console.log(s);
+    console.log("\n\n");
+
+    // every method is tottaly reverse of some method they scan all value and if one value not match return false if one value false than return false 
+    // they check untill not find false value when value find false they stop if value not find false than they return true 
+    const odd = [ 10, 20 , 30 , 9, 7 , 50 ]
+    const s1 = odd.every((num , i , array) =>{
+        console.log(num);
+        // return 2
+        // return 'sitaram'
+        // return null
+        // return num > 4 
+        return num % 2 == 0
+    })
+
+    console.log(s1);
+    
+    // diff
+    // in some one value match they stop and return true not match any true than they return false 
+    // in every scan all value when stop when find false value and return false not find any false value than they return true 
+</script>
+</html>
