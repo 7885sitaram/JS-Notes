@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element vs Node</title>
+</head>
+<body>
+    <h1>Element vs Nodes in js </h1>
+    <!-- this is comment  -->
+
+    <h2>this is another heading </h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa laboriosam deserunt aut molestiae! Inventore sit officia commodi incidunt consequuntur odio.</p>
+
+    this is text write on body templet 
+
+    <h3>this is end </h3>
+</body>
+<script>
+    // children only display the children list but the childnodes diaplay extra thigs like text 
+    console.log(document.body.children);
+    // you see text and text is nothing but \n (enter) value 
+    console.log(document.body.childNodes);
+    // have node type and diffrent node type value based on property for more node type go to mdn node page
+
+    // ***imp***
+    // if we want to update the content of body templet than not use any selector only use nodes
+
+    console.log(document.body.childNodes[8].nodeValue = "this is update text");
+
+    // every element is node but every node is not element 
+</script>
+</html>

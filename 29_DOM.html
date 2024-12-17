@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .color {
+            color: blue;
+           
+        }
+
+        .green-link{
+            font-size: 15px;
+            text-decoration: none;
+            color: green;
+        }
+
+        .link2{
+            border:  2px solid greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <H1 class="me">DOM IN JS </H1>
+    
+    <h1 class="head main" name="sitaram">this is class </h1>
+   
+    <p style="color:brown;" class="sty">this is for style </p>
+
+    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eveniet mollitia porro ullam harum aliquam esse labore quas provident dignissimos?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa dolores soluta id cum corporis mollitia natus dolore quo ut, sunt velit aliquam officia enim. Rem maxime, minus omnis nam earum nisi placeat magni error, dolorem voluptate velit ea corporis recusandae nobis similique culpa fugiat quam officia dicta eaque fuga soluta incidunt voluptates. Voluptates dignissimos accusamus nihil dolores iure. Beatae, libero ullam? Quas consequatur odio provident deserunt iste officiis quod unde itaque, animi at ratione recusandae nostrum. Quasi sit numquam natus, repellendus voluptatem tempora eos quae, facere voluptate nemo impedit dicta tenetur excepturi, ab beatae deleniti! Aliquam minus magnam aut ex?
+    </p>
+     
+    <h2 class="head"  >this is some languages </h2>
+    <h3 id="new">this is some languages </h3>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+        <li>REACT</li>
+    </ul>
+
+    <img style="height: 200px;" src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg" alt="xyz">
+
+    <p class="pera d-flex border">sitaram     ipsum dolor <b>sit amet consectetur,</b>  adipisicing elit. Maxime optio, at <br>eveniet eum hic nam libero neque, dolores labore error repudiandae nisi quos itaque beatae eaque. Reiciendis assumenda, soluta hic quia <span>atque magnam sunt,</span> labore odio, illo repellat tempore <i> exercitationem omnis eaque</i> accusamus explicabo nostrum ipsa provident accusantium cum quos.</p>
+
+    <a style="color: green;" href="#">google</a>
+    <a href="#">facebook</a>
+    <a href="#">twitter</a>
+    <a style="color: aqua;" href="#">instagram</a>
+    
+    <div class="parent">
+        <h4>this is me </h4>
+        <h5>my name is sitaram </h5>
+        <p>nice to meet you </p>
+     
+    </div>
+  
+
+    
+</body>
+
+<script>
+
+    // DOM : document object model 
+    // dom is very powerfull method in js they use for fatching the html content and update them , dom is object have many key value pair 
+
+    // dom have hireachical structure document have child html , html have 2 children head and body , anh head and body have also children and each tag is object 
+    // html parser convert html to object and store in browser memory 
+    
+    
+    console.log(document);
+    console.dir(document)
+
+    // we can update the html content 
+
+    // const update = document.children[0].children[1]
+    const update = document.body.children[2].innerHTML = "<i>sitaram prajapati</i>"
+     const x = document.body.children[3].innerText = "sitaram prajapati"
+
+    //  we have multiple methods for accesing html content 
+    console.log("*******\n");
+    console.log(document.all);
+    console.log(document.head);
+    console.log(document.title);
+    console.log(document.links);
+    console.log(document.images);
+    console.log(document.doctype);
+
+    console.log("\n\n");
+
+    //  so here we can modify using innerHtml and inner Text but the diff is using innerHtml we can add with tag we can push content with tag like bold , italik , div , h1 but using inner text we can only modify the content not the tag 
+    
+    console.log(update);
+    console.log(x);
+
+    // update the imgs 
+
+    const img = document.body.children[5].src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmjS8ywMSOb3KUk39Ta5Ro3xb9yM6P8TLbdw&s"
+
+    // structure of dom 
+
+    // window --> document --> html --> head , body --> head-->meta , title etc.., body --> h1 , ul , img , p etc... 
+
+    //****** suitable way for selecting elements
+
+    // tag (element)
+    // so this is return all p tag in webpage 
+    console.log( document.getElementsByTagName('p'));
+
+    // using class 
+    // class not match than return empty array
+    console.log( document.getElementsByClassName("head"));
+
+    // using id 
+    // if id not matcgh return null 
+    console.log(document.getElementById("new"));
+    
+    // query selector is most imp they use for acces both class and id but only access occure first so if we want multi class name use queryselectorall
+    console.log(document.querySelector(".head")); 
+    console.log(document.querySelectorAll(".head"));
+    
+    // queryselectorall are not matter id is uniq and only show one they return multiple id 
+    console.log(document.querySelector("#new")); 
+    // console.log(document.querySelectorAll("#new"));
+    
+    // also using query selector you acces with attribute 
+    console.log(document.querySelector('[alt="xyz"]'));
+
+    // magic: you can access element using html code inspect select element copy js path the js path ias your dom 
+
+    // eg... document.querySelector("body > ul")
+
+    //****** diff beyween innerhtml , inner text and text content 
+     console.log("+++++++++\n\n");
+    console.log(document.querySelector(".pera").innerHTML);
+    console.log("\n");
+    console.log(document.querySelector(".pera").innerText);
+    console.log("\n");
+    console.log(document.querySelector(".pera").textContent);
+
+    // in this innerhtml return with tag and spaces according to html file 
+    // in this innertext return only text and remove the all tag only show the content and not spacing allow, and the html tag apply like br 
+    // text content is same as the innertext but space are allow  , the html tag are not apply  
+
+    //***** getattribute and set attribute 
+    // using getattribute we can get the attribute 
+    // **in this have getAttributeNode they return with attribute and value 
+    // if we want list of all attributes in perticuler tag than use attribute method
+    console.log("55555\n");
+    console.log(document.querySelector('[alt]').getAttribute('alt'));
+    console.log(document.querySelector('[alt]').getAttributeNode('alt'));
+    console.log(document.querySelector('[alt]').attributes);
+
+    // we can find class using attribute
+    console.log(document.querySelector(".head").getAttribute("class"));
+    console.log(document.querySelector(".head").getAttributeNode("class"));
+    console.log(document.querySelector(".head").attributes);
+
+    // uasing setattribute we can add attribute 
+
+    console.log(document.querySelector(".pera").setAttribute("title", "hello"));
+    
+    console.log(document.querySelector(".me").setAttribute("class" , "color"));
+
+    // in setattribute some attribute dont need setattribute they access direct without need of setattribut like , id , title, className etc...
+    // ex
+
+    console.log(document.querySelector("h1").id = "top");
+    console.log(document.querySelector("h1").className = "tab");
+
+    // ***** apply style using dom 
+    // in this we use style object but only create the style object not contain the value if you want contain value than apply inline css 
+    
+    console.log(document.querySelector(".sty").style);
+    console.log(document.querySelector(".sty").style.color = "aqua");
+
+     console.log(document.querySelectorAll('a').forEach(function(link){
+        // console.log(link.style.color = "red");
+        // console.log(link.style.textDecoration = "none");
+        // and so on....
+        // but this is too long and not effective so we use cssText 
+        // so csstext firstly return empty string because not any style apply if any style apply on tag than they show 
+        console.log("\n");
+        console.log(link.style.cssText);
+
+        // method-2
+        // we can use csstext as a style tag we can add style like pure css 
+
+        // console.log(link.style.cssText = `
+        //    font-size: 15px;
+        //     text-decoration: none;
+        //     color: red;`);
+
+            // method-3
+
+        console.log(link.className = 'green-link');
+
+        // if you want to give multiple class than use classlist 
+
+        console.log(link.classList.add('link2'));
+        console.log(link.classList.remove('link2'));
+        // toggle is use for if class exist than remove or class not exist than add  
+        console.log(link.classList.toggle('link2'));
+
+    }));
+    // classlilist.length return number of class 
+    console.log(document.querySelector(".pera").classList.length);
+    // classlist.contain check class exist or not return boolean value true false 
+    console.log(document.querySelector(".pera").classList.contains("pera"));
+     
+    console.log("++++\n\n");
+
+    // *******parent , sibling , child elements
+
+    // parentElement
+
+    console.log(document.querySelector('h4').parentElement);
+    console.log(document.querySelector('h4').parentElement.parentElement);
+    console.log(document.querySelector('h4').parentElement.parentElement.parentElement);
+    console.log(document.querySelector('h4').parentElement.parentElement.parentElement.parentElement);
+    console.log(document.querySelector('h4').parentElement.parentElement.parentElement.parentNode);
+
+    // childelement 
+
+    console.log("\n");
+    console.log(document.querySelector("h4").childElementCount);
+    console.log(document.querySelector(".parent").childElementCount);
+
+    console.log(document.querySelector(".parent").children);
+    // when you have not any children than return the empty array collection 
+    console.log(document.querySelector("h4").children);
+
+    // childnode : element and some extra info and by default value is text
+    console.log(document.querySelector(".parent").childNodes);
+    console.log(document.querySelector("h4").childNodes);
+
+    // in this have firstelementchild and first child concept so in this first elementchild is consider first tag (element) in children list and first child is consider based on childnode like space , #text and same terminology in lastelementchild and last child 
+    console.log("3333333");
+    console.log(document.querySelector(".parent").firstElementChild);
+    console.log(document.querySelector(".parent").firstChild);
+
+    // sibling
+    console.log("%%%\n");
+
+    console.log(document.querySelector('h4').nextElementSibling);
+    console.log(document.querySelector('h5').nextElementSibling);
+    console.log(document.querySelector('h5').previousElementSibling);
+
+    // nextsibling is childnode return only string and datatype is object 
+    console.log(document.querySelector('h4').nextSibling);
+
+</script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreteElement</title>
+    <style>
+        .container{
+            display: flex;
+        }
+
+        .container img {
+            height: 200px ;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Element in js </h1>
+
+    <div class="parent">
+        <div class="day">sunday</div>
+        <div class="day">monday</div>
+        <div class="day">tuesdasy</div>
+        <div class="day">wednesday</div>
+        <div class="day">thurseday</div>
+        
+    </div>
+</body> 
+    <script>
+
+       const parent =  console.log(document.querySelector(".parent").children);
+
+    //    create element using dom 
+
+    const div = document.createElement('div');
+    console.log(div);
+    div.className = "main"
+    div.id = "new"
+    div.setAttribute("title", "sitaram")
+    div.style.backgroundColor = "green"
+    div.style.Color = "aqua"
+
+    // div.innerText = "i am sitaram "
+    add = document.createTextNode("i am sitaram")
+    div.appendChild(add)
+
+    document.body.appendChild(div)
+
+       
+    </script>
+</html>

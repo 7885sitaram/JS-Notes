@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append and Appendchild </title>
+</head>
+
+<style>
+
+    .container{
+        display: flex;
+    }
+    .card{
+        height: 200px;
+        width: 200px;
+        background: green;
+        color: aqua;
+        border: 2px solid black;
+        
+    }
+</style>
+<body>
+    <h1>Append and Append child in js </h1>
+    <h3>this is me </h3>
+    <h4>nice to meet you</h4>
+
+    <div class="container">
+        <div class="card">this is box </div>
+    </div>
+</body>
+<script>
+    const container = document.querySelector(".container")
+    const card = document.querySelector(".card")
+    const h1 = document.querySelector('h1')
+    const h3 = document.querySelector('h3')
+    const h4 = document.querySelector('h4')
+
+    // appnd child : add in last call append
+    
+    // console.log(container.appendChild(h1));
+
+    // clonenode : it is use for clone the element it is help where we want to append the element but not move the position only append clone of element 
+    // clonenode() is simple cloning only give the element tag if you want element with content than use deep cloning add pera true 
+
+    console.log(container.appendChild(h1.cloneNode()));
+    console.log(container.appendChild(h1.cloneNode(true)));
+
+    console.log(container.appendChild(card.cloneNode(true)));
+    console.log(container.appendChild(card.cloneNode(true)));
+
+    // append is same as appendchild 
+    // diff is append child return the element and the append return undefine
+    console.log(container.appendChild(h3));
+    console.log(container.append(h3));
+    
+    // also we can enter string we can add content usinf append 
+    console.log(container.append("sitaram prajapati"));
+
+    //  append child only append the element if we pass string than show error but if we want than we can 
+    
+    const textnode = document.createTextNode("   mahesh")
+    console.log(container.appendChild(textnode));
+
+    // using append we can append multiple iteam like string and element 
+    // in appendchild we can append only first perameter
+    console.log(container.append("  rahul", h4));
+   
+
+</script>
+</html>

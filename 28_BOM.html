@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOM</title>
+  </head>
+  <body>
+    <h1>BOM in js</h1>
+
+    <button onclick="reload()">Reload the page</button>
+    <button onclick="openpage()">open the page</button>
+    <button onclick="resizepage()">resize the page</button>
+    <button onclick="closepage()">close the page</button>
+
+  </body>
+  <script>
+
+    // BOM : browser object method it is developed by browser give many functionaly
+
+    // location : give url location
+    console.log(location);
+    // console.log(location.href = "https://getbootstrap.com/");
+
+    // for reloading page
+
+    // console.log(location.reload());
+    // setTimeout(() => {
+    //   console.log(location.reload());
+    // }, 5000);
+
+    // so in this we cannot reload only one time using settime and setinterval becayse when we reload the whole page reload and the settimeout ot setinterval are excuate and they reload and reload never stop so only one time reload is possiable in event like click event
+
+    function reload() {
+      window.location.reload();
+    }
+
+    // location.href is like anchor tag
+    // location.href = 'https://getbootstrap.com/docs/5.0/getting-started/introduction/'
+
+    // window.history : history is use for record the user page traversing they foreward or backward across the pages
+
+    console.log(window.history);
+    // history.foreward() and history.back() bothe are use for traversing the page and history.go(-1),history.go(2) is direct jump on page ,
+
+    // innerheight is give our window height website display height
+
+    console.log(window.innerHeight);
+    console.log(window.innerWidth);
+
+    // outerheight is return full device display height
+    console.log(outerHeight);
+
+    // bydefault the inner and outer height are same but when we resize our innerheight the diffrence is appear
+
+    //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+    // open : is open new tab
+    // open()
+    // we can redirect the page using open
+    // open('https://getbootstrap.com/' , 'sitaram')
+
+    // close is close the page who are opend via open method not another page
+
+    // resize By() , resizeTo() ,  is resize your display but apply only on we open via open method and they open in pop up style
+
+    // so in this resizeTo() --> it is resize the file in given pixel like resizeTo(200,200) than they resize the tab into 200x200 px not affext by default tab size
+    // so in this resizeBy() --> it is resize the file in given pixel but they add in context of by default page size ex. default tab size is (100x100)px and we resizeBy(200,200) than they resize the file adding with by default is
+
+    open("https://www.amazon.in/", "sitaram",);
+
+    // moveTo(), moveBy() is use for moving the tab in display
+
+    // resize , move are only applyin open method file
+      var bt;
+    function openpage(){
+        bt = open("" ,"", "width=500px, height=200px, top=100px, left=500px"  
+          
+        )   
+
+        bt.document.write("<h1>sitaram </h1>")
+    }
+
+    function resizepage(){
+       bt.resizeBy(50,50) 
+       bt.focus()
+    }
+
+    function closepage(){
+       bt.close() 
+    }
+
+    // ***imp above method are onl;y apply on local page not amy url manipulate via our home window showing error of we cannoy resize or move via our console 
+
+    // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+    // scrollTo(), scrollBy() is scroll the web page
+    // on this scrollto is scroll the page and fix the point stop at the page and
+    // on this scrollBy is scroll the page and they scroll and scroll interval of scroll size
+
+    // print() is for printing the page
+  </script>
+</html>

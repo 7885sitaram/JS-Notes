@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructring</title>
+  </head>
+  <body>
+    <h1>Destructring in js</h1>
+  </body>
+  <script>
+    const color = ["red", "green", "yellow", "pink", "black"];
+
+    // const col1 = color[1]
+    // const col2 = color[3]
+    // console.log(col1);
+    // console.log(col2);
+
+    // using destructring
+
+    const [col1, col2, col3] = color;
+    console.log(col1);
+    console.log(col2);
+    console.log(col3);
+
+    const [, , , , col5] = color;
+    console.log(col5);
+
+    // here array are object so we can also do
+    const { 3: color4 } = color;
+    console.log(color4);
+
+    // in object case
+
+    const user = {
+      name: "sitaram",
+      age: 20,
+      id: "26",
+
+      add: {
+        dist: "gujrat",
+        city: "ahmedabad",
+      },
+    };
+
+    // const name = user.name
+    // const age = user.age
+
+    // console.log(name);
+    // console.log(age);
+
+    // using destructring
+
+    const { name, age } = user;
+    console.log(name, age);
+
+    // in nesting object  : only city will be printed at line:60
+    const { add } = user;
+    const {
+      add: { city },
+    } = user;
+    console.log(add);
+    console.log(city);
+
+    // using function we can do only which pera pass in function
+
+    function profile({ name, age }) {
+      console.log(name, age);
+    }
+
+    profile(user);
+
+    // in array method
+
+    function printcolor([col1, col2, , , col5]) {
+      console.log(col1, col2, col5);
+    }
+
+    printcolor(color);
+  </script>
+</html>
