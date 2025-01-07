@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sync , Async </title>
+</head>
+<body>
+    <h1>Synchronous and Asynchronous in js </h1>
+    <h2>i am sitaram</h2>
+    <img src="" alt="">
+    <button>block main thred</button>
+    <button class="btn">click me</button>
+</body>
+<script>
+    // synchronous : in js have only one mind call single threded(aek time aek kam )
+    // if you write settime out than they work multiple things run the code and after excuate the settime out but in actual process the js engine not deal thw settime out they send to the browseer and they take thread and excuate the settime out ,  js engine only manage the time 
+
+    // synchronous code ,mean run line by line and in this they work on main thred  
+    // asynchronous not run line by line ex is  settimeout etc.. not excuate line by line and dont relia on main thred , some code are send to the browser anmd they process and after time js ecxuate the code  
+
+    // alert are synchronous they excuate and dont click ok they not excuate another code 
+
+    // block main thread
+
+    const button = document.querySelector("button")
+
+    button.addEventListener('click', ()=>{
+        const start = Date.now()
+        let current = start
+        
+        while(start + 5000 > current){
+            current = Date.now()
+        }
+    })
+
+    // after 5 sec the main thred are block
+
+    // we can do asynchronous code to synchronous code 
+
+    const btn = document.querySelector(".btn")
+    const img = document.querySelector("img")
+    
+    btn.addEventListener('click', ()=>{
+    xhr = new XMLHttpRequest()
+    // xhr.responseType= 'json'
+
+    xhr.addEventListener('load' , ()=>{
+        console.log(xhr);
+        // img.src = (xhr.response.message)
+    })
+
+    xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts' , false)
+    xhr.send()
+})
+
+// if we pass false perameter in open method than it become the scnchronous and main thred handle the whole process and dose not work any else this is not good practice 
+// in scnchronous the responsetype dose not support
+
+</script>
+</html>

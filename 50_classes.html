@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+</head>
+<body>
+    <h1>Classes in js </h1>
+</body>
+<script>
+
+    
+    function createuser(name , last , age){
+        this.name = name 
+        this.last = last 
+        this.age = age 
+
+    }
+
+    createuser.prototype.year = function(){
+        return new Date().getFullYear - this.age
+    }
+
+    createuser.prototype.fullname = function(){
+        return this.name + this.last
+    }
+
+    const user1 = new createuser('sitaram', 'prajapati', 20)
+    const user2 = new createuser('jigs', 'patel', 25)
+
+    console.log(user1);
+    console.log(user1.fullname());
+    console.log(user2)
+
+    // the problem we make to different prototype for functions so solution is classes 
+    // type of class is function 
+
+    // classes
+    console.log("**********\n\n"); 
+
+    class createuser2 {
+    // in classes constructor function isn use for declering the method 
+        constructor(name , cast , age , ac){
+            //   console.log(name, cast , age);
+            this.name = name 
+            this.cast = cast
+            this.age = age 
+            this._ac = ac
+        }
+
+    // so if we code function(method) in classes than they store in prototype not make different method for storing the function 
+
+        year(){
+        return new Date().getFullYear() - this.age
+        }
+
+        fullname(){
+        return this.name + this.cast
+        }
+
+    } 
+
+   const obj1 = new createuser2('sitaram', ' prajapati', 20, 5624)  
+   const  obj2 = new createuser2('jigs', ' patel', 25)
+   
+   console.log(obj1.fullname());
+   console.log(obj2.fullname());
+
+   console.log(obj1.year());
+   console.log(obj2.year());
+
+   console.log(obj1._ac);
+
+    // private field : private field in js is invented few year age 3 to 4 year ago before 4 year ago the developer use _(underscore) before define any method or function but they are not apply user can update and acces 
+
+    // so now we use #
+
+    class profile{
+        #ac
+        constructor(name , sallery, ac){
+           
+            this.name = name 
+            this.sallery = sallery
+            this.#ac = ac
+        }
+
+        // public 
+        greet = "nice to meet u"
+        // if we want to convert private than add #
+        #greet = "nice to meet u"
+
+        acnum(){
+            console.log(this.#greet);
+            console.log(this.#ac);
+        }
+
+        // we can make private method 
+        #secure(){
+            console.log("this content is privatre");
+        }
+
+        display(){
+           this.#secure()
+        }
+
+        // static property is acces via classname not acces through object 
+        static s = "this is static"
+    }
+
+    const u1 = new profile('sbi', 54000, '9899')
+
+    console.log(u1);
+    u1.acnum();
+
+    u1.display();
+    // console.log(u1.#secure());
+    // console.log(u1.#ac);
+    
+    // for private field use # and decleae # outside of constructor  
+    // so in this we can achive the private property we can acces inside of classes but if we acces outside of class than show error
+
+    console.log(u1.s);
+    console.log(profile.s);
+
+    // in object
+
+    const detail = {
+        name : 'raghav',
+        '#id' : 9654 
+    }
+
+    console.log(detail.name);
+    console.log(detail['#id']);
+
+</script>
+</html>

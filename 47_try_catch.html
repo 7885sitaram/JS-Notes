@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try & Catch</title>
+</head>
+<body>
+    <h1>Try and Catch</h1>
+</body>
+<script>
+    // console.log(a);
+    // console.log( 5 + 3);
+
+    // here the code is stop and cant excuate ahed so in this condition use try and catch 
+
+    try{
+        console.log(a);
+    }catch(err){
+        // err is object 
+        console.log(err);
+        console.log(err.message);
+        console.log(err.name);
+    }finally{
+        console.log("excuate every case");
+    }
+
+    console.log(5+2);
+
+    // try catch is use in async await function in this chamce for error 
+
+    async function api2 (){
+        try{
+
+            const url = 'https://httpbin.org/delay/2'
+       const response = await fetch(url)
+       console.log(response);
+
+        const data = await(await fetch(url)).json()
+     
+        }catch(err){
+            console.log(err);
+        }
+
+        console.log('code still running');  
+    }
+
+    // api2()
+
+    // ******** optional chaining ********
+     console.log('***\n\n');
+    const user= {
+        name: "sitaram",
+        last :" prajapati",
+        age: 20,
+        sallery : 54000,
+        // address:{}
+
+        fullname : function(){
+            return user.name + user.last
+        }
+    }
+
+    // console.log(user.address.city);
+
+    // in this in object is not define than return undefine but you go in nested than show error so the solution is use && they stop when condition is false 
+
+    // console.log(user.address && user.address.city);
+
+    // one another solution is optional chainning 
+    // in this if property is true than m ove else undefine 
+    console.log(user.address ?.city);
+    console.log(user?.name );
+
+    // in function
+    console.log(user.fullname?.());
+    
+</script>
+</html>

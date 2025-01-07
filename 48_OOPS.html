@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS </title>
+</head>
+<body>
+    <H1>OOPS IN JS </H1>
+</body>
+<script>
+    // oop object oriented programming have 4 piller (encapsulation , abstraction , inheritence , polymorphisam)
+
+    const user = {
+        name: 'sitaram',
+        last :'prajapati',
+        age : 25,
+        year : function (age){
+        return new Date().getFullYear() - user.age 
+    }
+    }
+
+    console.log(user.year());
+    // if we want to create multiple object in same formate than use fectory function 
+
+    function createuser(name , last , age){
+        const user = {
+        name: name,
+        last :last,
+        age : age,
+        year : function (age){
+        return new Date().getFullYear() - user.age
+        },
+    }
+        return user    
+    }
+
+    const k =createuser('jigs', 'patel', 22)
+    const k2 =createuser('divya', 'shah', 32)
+    const k3 =createuser('mahesh', 'jadav', 52)
+    console.log(k);
+    console.log(k.year());
+    console.log(k2);
+    console.log(k2.year());
+    console.log(k3);
+    console.log(k3.year());
+
+    // in this every user make different data and function but the work is same and store in different memory for same formate so this problem solve by constructor 
+
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback hell</title>
+</head>
+<body>
+    <h1>Callback Hell in js </h1>
+</body>
+<script>
+    // callback hell is problem occure in xmlhttp  and than solution for callback hell introduce promises and fatch api  
+
+    function makehhtprequest(method , url, callback){
+    const xhr = new XMLHttpRequest()
+
+    xhr.responseType = 'json'
+
+    xhr.addEventListener('load', ()=>{
+    callback(xhr.response);
+       
+    })
+
+        xhr.open(method, url)
+        xhr.send()
+    }
+
+    makehhtprequest('GET', 'https://dummyjson.com/users', (data)=>{
+        console.log(data);
+
+        makehhtprequest('GET', `https://dummyjson.com/posts/user/${data.users[5].id}` ,(data) =>{
+            console.log(data);
+
+            makehhtprequest('GET',`https://dummyjson.com/comments/post/${data.posts[0].id}` , (data)=>{
+                console.log(data);
+            })
+        })
+
+        
+    })
+
+</script>
+
+
+</html>

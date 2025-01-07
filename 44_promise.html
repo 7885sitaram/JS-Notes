@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <h1>Promise in js </h1>
+    <button id="resolve">resolved promise </button>
+    <button id="reject">reject promise </button>
+</body>
+<script>
+    // promise is object in js and promise containe call back function 
+    // in promise promisestate have 3 types (pending , resolved , reject)
+
+    const button = document.querySelector('button')
+    const button2 = document.querySelector('#reject')
+
+    const p = new Promise((resolve, reject)=>{
+        // resolve("sitaram")
+        //    reject("sitaram")
+
+    // setTimeout(() =>{
+    //     resolve({name : 'sitaram'})
+    // }, 2000)
+
+    button.addEventListener('click', ()=>{
+        resolve("resolved state ")
+    })
+
+    
+    button2.addEventListener('click', ()=>{
+        reject("rejected state")
+    })
+
+    })
+
+    // in this when promise is resoloved than use than method they direct disply after promise resolved and when we reject the promise catch is print
+
+    p.then((data) =>{
+        console.log(data);
+    }).catch((err)=>{
+        console.log(err);
+    }).finally(()=>{
+        console.log("run on both case resolved or rejected ");
+    })
+    console.log(p);
+
+    // setTimeout(()=>{
+    //    console.log("hii");
+    // })
+
+    // promise is ascnchronous code
+    // promise code are handled by browser and it is asynchronous so they process in browser and than they go in microtask queue in microtask queue contain promises code and microtask queue is like callback queue 
+    // in this case is set time out is after excuate of promises not because of settime out 2000 but the reason is the priority of microtask is greater than callback queue so the promises excuate first after excuate settime out 
+    
+    // in this than return the promise and return undefine and same as catch they also return promises and if yoyu npt return any value than show undefine 
+
+    p2 = p.then((data)=>{
+        console.log(data);
+        return 10
+    }).then((data)=>{
+        console.log(data);   
+    })
+
+    console.log(p2);
+</script>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard</title>
+</head>
+<body>
+    <h1 tabindex="0">Keyboard event in js </h1>
+    <input type="text">
+</body>
+
+<script>
+    h1 = document.querySelector("h1")
+    input = document.querySelector("input")
+    
+    // in keyboard event the condition is target element is on focus 
+
+    input.addEventListener('keypress', (e)=>{
+        console.log(e.key);
+    })
+
+    // here the h1 is not focus element so they not apply keyboard event but if we want than we make focusable element using tabindex = 0 and in diply shift tab to focus on element 
+
+    h1.addEventListener('keypress', (e)=>{
+        console.log(e.key);
+    })
+
+    // but this is not good practice so we focus on window 
+
+    // window.addEventListener('keypress', (e)=>{
+    //     console.log(e.code);
+    //     console.log(e.key);
+    // })
+
+    // keyup event when we push key and when relese the key up the key than they call
+
+    window.addEventListener('keyup', (e)=>{
+        console.log(e.code);
+        console.log(e.key);
+        console.log('key up event ');
+    })
+
+     // keydown event when we push key they call (work alt , shift , tab , ctrl etc...)
+    //  keypress not work alt , shift , tab , ctrl etc...
+
+     window.addEventListener('keydown', (e)=>{
+        console.log(e.code);
+        console.log(e.key);
+        console.log('key up event ');
+    })
+</script>
+</html>

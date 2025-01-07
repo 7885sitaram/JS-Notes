@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event bubbling & capturing</title>
+    <style>
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .green{
+            height: 300px;
+            width: 300px;
+            background: green;
+        }
+
+        .blue{
+            height: 300px;
+            width: 200;
+            background: blue;
+        }
+
+        .pink{
+            height: 200px;
+            width: 100px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event bubbling and capturing in js </h1>
+
+    <div class="green">
+        <div class="blue">
+            <div class="pink"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const green = document.querySelector(".green")
+    const blue = document.querySelector(".blue")
+    const pink = document.querySelector(".pink")
+
+    green.addEventListener('click', (e)=>{
+        console.log("green clicked");
+        // e.stopPropagation()
+       
+    }, true)
+
+    // in this parent event are apply on child elemetn so we click blue or pink the event apply 
+
+    blue.addEventListener('click', (e)=>{
+        console.log("blue clicked");
+        // e.stopPropagation()
+    }, true)
+
+    // pink.addEventListener('click', (e)=>{
+    //     console.log("pink clicked");
+    // })
+
+    // so this is bubbling , we can stop 
+    pink.addEventListener('click', (e)=>{
+        console.log("pink clicked");
+        // e.stopPropagation()
+    }, true)
+
+    // in this bubbling process like lexical scope they start inner to outer and in capturing process outer to inner 
+</script>
+</html>

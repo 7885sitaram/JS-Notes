@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototypele</title>
+</head>
+<body>
+    <h1>prototypele inheritence using extend & super keyword</h1>
+</body>
+<script>
+   const h1 = document.querySelector('h1')
+
+   console.dir(h1);
+
+   class user {
+    constructor(name , cast , age , comp){
+            //   console.log(name, cast , age);
+            this.name = name 
+            this.cast = cast
+            this.age = age 
+            this.comp = comp
+        }
+
+        
+        year(){
+        return new Date().getFullYear() - this.age
+        }
+
+        fullname(){
+        return this.name + this.cast
+        }
+
+        get full(){
+            return `${this.name} ${this.cast}`
+        }
+        set full(value){
+   
+            const [name , cast] = value.split(" ")
+            this.name = name
+            this.cast = cast
+            console.log(value);
+        }
+
+   }
+
+   class student extends user {
+    // to call the constructor of its parent class to acces the parents property nd method use super class 
+
+    constructor(name , cast , age , std){
+
+            super(name , cast , age)
+            this.std = std 
+        }
+
+      study(){
+        console.log("study....");
+      }
+
+    }
+
+    class employe extends user{
+        constructor(name , cast , age , comp){
+
+        super(name , cast , age )
+        this.comp = comp 
+        }
+    } 
+
+    const std = new student('sitaram', ' prajapati', 20, 'B.TECH')  
+    const  emp = new employe('dimple', ' khanna', 35, 'GOOGLE')
+
+    // so above class is to long and duplication so we can use inheritance 
+    // using extend keyword we can inherit the property of parent class 
+
+    console.log(std);
+    console.log(emp);
+    console.log(std.year());
+</script>
+</html>

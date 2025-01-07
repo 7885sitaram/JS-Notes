@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event simulation</title>
+    <style>
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .card{
+            height: 150px;
+            width: 150px;
+            background: green;
+            color: aqua;
+            font-size: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3px;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Event simulation in js </h1>
+
+    <div class="container">
+        <div class="card">+</div>
+    </div>
+
+    <form action="/search">
+        <input type="text" ><br>
+        <button type="reset">reset</button>
+        <button>submit</button>
+    </form>
+</body>
+
+<script>
+    const container = document.querySelector(".container")
+    const card = document.querySelector(".card")
+    const input = document.querySelector("input")
+    const form = document.querySelector("form")
+    
+    let count = 1
+    function clone(){
+        const newcard = document.createElement('div')
+        newcard.classList.add('card')
+        newcard.innerText = count++
+
+        container.append(newcard)
+    }
+
+    // card.addEventListener('click', clone)
+
+    // some event simulation in js 
+    // click()
+
+    const k = setInterval(()=>{
+        if(count <= 300){
+            card.click()
+        }else{
+            clearInterval(k)   
+        }
+      
+    }, 10)
+     
+
+    // focus()
+    const t = setTimeout(()=>{
+        input.focus()
+    },2000)
+
+      // blur()
+      const t2 = setTimeout(()=>{
+        input.blur()
+    },3000)
+
+    // submit
+    // const t3 = setTimeout((e)=>{
+    //     e.preventDefault()
+    //     form.submit()
+    //     console.log("form submit");
+        
+    // },5000)
+
+      // reset
+      form.reset()
+    
+    
+
+
+
+</script>
+</html>

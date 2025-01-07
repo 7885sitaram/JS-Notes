@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <H1>API IN JS , talking to outside of world  </H1>
+    <img height="400px" src="" alt=""><br><br><br>
+    <button>click me </button>
+</body>
+<script>
+
+// fetch('https://jsonplaceholder.typicode.com/todos/1')
+//       .then(response => response.json())
+//       .then(json => console.log(json))
+
+    //   in this we get some data from another file so check network and larn some perameter like in this header , preview , response 
+
+    // most off request sent in GET method we can send POST metgod using post man software and using vs code 
+
+//     fetch('https://jsonplaceholder.typicode.com/posts', {
+//   method: 'POST',
+//   body: JSON.stringify({
+//     title: 'foo',
+//     body: 'bar',
+//     userId: 1,
+//   }),
+//   headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+//   },
+// })
+//   .then((response) => response.json())
+//   .then((json) => console.log(json));
+
+    //   we can request using post via thunderclient 
+    // GET : for acces data from backend
+    // POST : for something create
+    // PUT : for modify
+    // DELETE : for delete object 
+
+    // task
+ 
+    const img = document.querySelector('img')
+    const button = document.querySelector('button')
+    
+      button.addEventListener('click', ()=>{
+
+        fetch('https://dog.ceo/api/breeds/image/random')
+      .then(response => response.json())
+      .then(json =>{
+        console.log(json.message);
+        img.src = json.message
+
+        })
+      })
+
+
+    
+</script>
+</html>

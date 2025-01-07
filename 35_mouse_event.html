@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse</title>
+    <style>
+         .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+        }
+
+        .box{
+            background: green;
+            color: aqua;
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 draggable="true">Mouse in js </h1>
+
+    
+    <div class="container">
+        <div class="box">0</div>
+    </div>
+    
+</body>
+<script>
+    
+   const  box = document.querySelector(".box")
+   const container = document.querySelector(".container")
+   const card = document.querySelector(".box")
+     
+   let count = 1
+    function clone(){
+        const newcard = document.createElement('div')
+        newcard.classList.add('box')
+        newcard.innerText = count++
+
+        container.append(newcard)
+        
+    }
+
+    // box.addEventListener('click', clone)
+    // box.addEventListener('mousedown', clone)
+    // box.addEventListener('mouseup', clone)
+    // box.addEventListener('mouseenter', clone)
+    // box.addEventListener('mouseover', clone)
+    // box.addEventListener('mouseleave', clone)
+    // box.addEventListener('mousemove', clone)
+    // box.addEventListener('wheel', clone)
+
+    // diff between mouse over and mouse enter is if in element have child than mouse over is call and call and in mouse enter only parent element apply the event property
+
+    // dragable event is use for drag the element and set sttribute dragable = true 
+    // h1.addEventListener('drag', ()=>{
+    //     console.log('you drag h1');
+    // })
+
+    // it is possiable in mobile dimension 
+    // box.addEventListener('touchstart', clone)
+    // box.addEventListener('touchend', clone)
+    // box.addEventListener('touchmove', clone)
+
+    // pointermove combination of mouse move and touch move
+    box.addEventListener('pointermove', clone)
+</script>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box{
+            background: green;
+            color: aqua;
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event in js .</h1>
+    <button onclick="alert('you clicked')">click me </button>
+
+    <div class="container">
+        <div class="box">+ </div>
+    </div>
+    
+    <form action="/search">
+    <input type="text" id = "username"><br>
+    <input type="email" id = "mail">
+    <button>click me </button>
+    </form>
+    <p class="pera"></p>
+</body>
+<script>
+
+    // event are apply on any element 
+
+    h1 = document.querySelector('h1')
+
+    function hi(){
+        console.log("hiiiii");
+        // alert("you clicked")
+    }
+
+    // h1.onclick = hi
+
+    // when you not give any function on event than js build function as event name and if you assign function to your event than js take rest 
+
+    // suitable way is addeventlistner
+    // in addeventlistner have 2 perameter one is event and second is call back function  
+
+   const  box = document.querySelector(".box")
+
+    box.addEventListener('click', hi)
+    box.addEventListener('click', function(){
+        console.log("second hii");
+    })
+
+    // task 
+
+    const container = document.querySelector(".container")
+    const card = document.querySelector(".box")
+  
+     let count = 1
+
+
+     function clone(){
+        const newcard = document.createElement('div')
+        newcard.classList.add('box')
+        newcard.innerText = count++
+
+        container.append(newcard)
+        
+    }
+
+    box.addEventListener('click', clone)
+
+    //***** form event and event object ******
+    const form = document.querySelector("#username")
+    const pera = document.querySelector(".pera")
+    const all = document.querySelector("form")
+
+    // input event when you write in input field this event active 
+
+    // form.addEventListener('input', (e) =>{
+    //     console.log(e);
+    //     console.log("text inserted");
+    //     console.log(e);
+    //     pera.innerText = e.target.value
+
+    // })
+
+    // change : it is call after write in input field and only apply whene you change the input 
+
+    // form.addEventListener('change', (e) =>{
+    //     console.log(e);
+    //     alert("text inserted ")
+    //     pera.innerText = e.target.value
+
+    // })
+
+    // focus : when you focus the input field
+
+    // form.addEventListener('focus', (e) =>{
+    //     console.log(e);
+    //     console.log("focuss")
+    //     pera.innerText = e.target.value
+
+    // })
+
+    //   blurr : when you touch out of field they call (not focus)
+
+    //   form.addEventListener('blur', (e) =>{
+    //     console.log(e);
+    //     console.log("blurr")
+    //     pera.innerText = e.target.value
+
+    // })
+
+    all.addEventListener('click', () =>{
+        console.log("form click");
+    })
+
+    // when you click on submit button the page is refresh and we can noyt see the console data so use object preventdefault they cannot submit the form 
+
+    all.addEventListener('submit', (e) =>{
+        e.preventDefault()
+        console.log("form submit");
+    })
+
+    // in object have target but they change dynammically accordind to user click if we want ("jis k uper event laga he wahi print ho to ") use currenttarget 
+
+    all.addEventListener('click', (e)=>{
+        // console.log(e.target);
+        console.log(e.currentTarget);
+    })
+
+</script>
+</html>

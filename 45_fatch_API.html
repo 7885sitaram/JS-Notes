@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatch API</title>
+</head>
+<body>
+    <h1>Fatch API</h1>
+</body>
+<script>
+    // fetch method is use for fatching the API and in this is like promises so usig then we can first convert data into json and than another then we can fetch the data 
+
+//    const f =  fetch('https://dummyjson.com/products').then((res)=>{
+//     // console.log(res);
+//     // console.log(res.json());
+//     res.json().then((data)=>{
+//     console.log(data);
+//    })
+  
+//    })
+
+//    but it is long process so we can use 
+    
+    fetch('https://dummyjson.com/products').then((res)=>{
+       return res.json()
+    }).then((data)=>{
+        console.log(data);
+    })
+    // bydefault it send get method 
+
+    fetch('https://dummyjson.com/products/add',{
+        method:'POST',
+        body: JSON.stringify({
+            title:"hello",
+            catagery:"stationery"
+            // and so on ddd data and and this data store in backend 
+        })
+    }).then((res)=>{
+       return res.json()
+    }).then((data)=>{
+        console.log(data);
+    }).catch((err)=>{
+        console.log(err);
+    })
+
+</script>
+</html>

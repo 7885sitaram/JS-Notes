@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getter & Setter</title>
+</head>
+<body>
+    <h1>Getter and Satter in js </h1>
+</body>
+<script>
+
+    const user = {
+        name : 'sitaram',
+        last : 'prajapati',
+        age : 10,
+         full(){
+            return user.name + " " + user.last
+        }
+    }
+
+    // console.log(user.full());
+    // console.log(user.full = 'jigs patel');
+
+    // console.log(user.full());
+    // show error show the solution is getter and setter 
+
+    // for getter write get
+    
+    const user2 = {
+        name : 'sitaram',
+        last : 'prajapati',
+        age : 10,
+        get full(){
+            return `${this.name} ${this.last}`
+        },
+        set full(value){
+   
+            const [name , last] = value.split(" ")
+            this.name = name
+            this.last = last
+            console.log(value);
+        }
+    }
+
+    console.log(user2);
+    console.log(user2.full);
+    user2.full = 'raghav shah';
+    console.log(user2.full);
+    console.log(user2.name);
+    console.log(user2.last);
+
+</script>
+</html>

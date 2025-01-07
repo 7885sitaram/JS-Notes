@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XHR</title>
+</head>
+<body>
+    <H1>XML - XHR IN JS </H1>
+    <img height="400px" src="" alt=""><br><br><br>
+    <button>click me </button>
+</body>
+<script>
+    // fatch api concept is apply from 2015 before 2015 we use XMLHTTPREQUEST
+    // in normaslfunction return value is undefine but you use new keyword and than call function they return object  
+    
+    const img = document.querySelector('img')
+    const button = document.querySelector('button')
+    
+      button.addEventListener('click', ()=>{
+        const xhr =  new XMLHttpRequest()
+        // console.log(xhr);
+
+        // some time api take time for data accesing so you can use load event 
+        xhr.responseType = 'json'
+        xhr.addEventListener('load', ()=>{
+            console.log(xhr.response);
+            img.src = xhr.response.message
+             console.log(xhr);
+        })
+
+        // you can use onload method like event  
+
+        xhr.open('GET', 'https://dog.ceo/api/breeds/image/random')
+        xhr.send()
+    
+      })
+
+</script>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegation </title>
+    <style>
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .card{
+            height: 150px;
+            width: 150px;
+            background: green;
+            color: aqua;
+            font-size: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Delegation in js </h1>
+      
+    <div class="card">+</div>
+    <div class="container">
+        
+    </div>
+</body>
+<script>
+      const container = document.querySelector(".container")
+      const card = document.querySelector(".card")
+
+    //   method - 1
+      
+    //   let count = 1
+    //   function clone(){
+    //     const newcard = document.createElement('div')
+    //     newcard.classList.add("card")
+    //     newcard.innerText= count++
+
+    //     container.append(newcard)
+
+    //     newcard.addEventListener('click', ()=>{
+    //         newcard.remove()
+
+    //     })
+
+    //   }
+
+    //   card.addEventListener( 'click', clone)
+
+    //   const t = setInterval(()=>{
+    //     if(count > 100){
+    //        clearInterval(t)
+           
+    //     }
+    //     card.click()
+    //   }, 50)
+
+    //   so in this every element in add event create every new element have own event so this is not good practice this will reduce the performance so 
+    // we can apply event only one time for each element so this process call event delegation 
+
+    // method - 2
+
+    let count = 1
+      function clone(){
+        const newcard = document.createElement('div')
+        newcard.classList.add("card")
+        newcard.innerText= count++
+
+        container.append(newcard)
+      }
+      
+    
+      card.addEventListener( 'click', clone)
+
+      container.addEventListener('click', (e)=>{
+           if(e.target !== container){
+            e.target.remove()
+           }
+        })
+
+
+      const t = setInterval(()=>{
+        if(count > 30){
+           clearInterval(t)
+           
+        }
+        card.click()
+      }, 50)
+
+
+</script>
+</html>

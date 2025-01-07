@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor</title>
+</head>
+<body>
+    <h1>constructor in js</h1>
+</body>
+<script>
+
+    // in previous we show every object made own function and store in different address in memory so the solution 
+
+    // function year(){
+    //     return new Date().getFullYear() - this.age
+    // }
+
+    function createuser(name , last , age){
+        const user = {
+        name,
+        last ,
+        age ,
+        // year : createuser.commonMethod.year,
+    }
+        return user    
+    }
+
+    // createuser.commonMethod={
+    //     year(){
+    //     return new Date().getFullYear() - this.age
+    // }
+        
+    // }
+
+    const k =createuser('jigs', 'patel', 22)
+    const k2 =createuser('divya', 'shah', 32)
+    const k3 =createuser('mahesh', 'jadav', 52)
+
+    console.log(k);
+    // console.log(k.year());
+    console.log(k2);
+    // console.log(k2.year());
+    console.log(k3);
+    // console.log(k3.year());
+
+    // in this you can see the function store in global space so they occupy only one memory and same for evevry object 
+    // console.log(k.year === k2.year);
+
+    // but this is polymormhisam and we broke the abstraction rule so we cover up into comman method and equal for all object 
+
+    // console.log(k.year === k2.year);
+
+    // so above all code is mannual method and this is js give using constructor
+    
+    // in every object have prototype and prototype have constructor and they constructor is point to our function / object 
+    
+    // new keyword point which function they create and always return value is object if you define or not 
+
+    function greet2(){
+       console.log(this);
+    }
+   console.log( new greet2()); 
+    console.log(this);
+
+    // now using constructor 
+
+    function createuser2(name , last , age){
+        this.name = name 
+        this.last = last 
+        this.age = age 
+
+    }
+
+    const user1 = new createuser2('sitaram', 'prajapati', 20)
+    const user2 = new createuser2('jigs', 'patel', 25)
+
+    console.log(user1);
+    console.log(user2)
+    
+</script>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+<body>
+    <h1>Asynv Await in js </h1>
+</body>
+<script type="module">
+    // for making function asynchronise use async keyword yand it is return by default fullfiled promises 
+   async function makehhtprequest(){
+           return 'hello'
+    }
+
+     const k = makehhtprequest()
+     console.log(k);
+
+    //  if we want throw error than  
+
+    function greet(){
+        console.log('hello i am sitaram');
+        // throw 'error in program'
+        console.log("niuce to ,meet u");
+    }
+    // where throw occure in program they stop function excuation 
+
+    greet()
+
+    async function api (){
+       const url = 'https://dummyjson.com/products'
+       const response = fetch(url).then((res)=>{
+           return res.json()
+       }).then((data)=>{
+        console.log(data);
+       })
+
+    }
+
+    api()
+
+    // but this is long we can use await 
+    // await is wait for promise response and than they excuate await direct return promise response
+
+    // async function is asynchronise but in async function code excuation are in synchronise way in this await is go to browser thred and wait for promise response and then excuate 
+
+   console.log("**************");
+    
+    async function api2 (){
+       const url = 'https://httpbin.org/delay/4'
+       const response = await fetch(url)
+       console.log(response);
+
+    //    for data acces
+        // const data = await response.json()
+        // console.log(data);
+        // or
+
+        const data = await(await fetch(url)).json()
+        // console.log(data);
+
+    }
+
+    api2()
+
+    // in this the main thred are work on js file so the async handle by the browser so side by side js thred excuate greet2 function 
+
+    function greet2(){
+        console.log('helooo');
+    }
+
+    greet2()
+    
+    // ***** await is valid only in async function but we can do write type = "module" in the script file 
+
+    const url = 'https://httpbin.org/delay/4'
+    const data = await(await fetch(url)).json()
+    console.log(data);
+
+</script>
+</html>

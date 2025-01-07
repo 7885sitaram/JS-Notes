@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+</head>
+<body>
+    <h1> this keyword in js</h1>
+    <button>Click me </button>
+</body>
+<script>
+    // in js this keyword have not any specific location they change 
+    // this keyword us object ko refer krta he jis object ne kisi function ko call kiya ho 
+    // not in every case but 90% case jis function ko call kiya gya he uske left side jo bhi keyword he usko hi this keyword point krega eg. user.full() so this point to user , user() so nothigs mean window
+
+    console.log(this);
+
+    function greet(){
+        this.hello = 'hiiiiii'
+        console.log(this);
+    }
+    // same as the greet functionpoint to window but if you stop than add new keyword for calling time 
+
+    // greet()
+    new greet()
+
+
+    const user = {
+        name:"sitaram",
+        last:"prajapati",
+        tag : ['a', 'b', 'c'],
+        // full(){
+            
+        //     console.log(this);
+        //     return `${user.name} ${user.last}`
+        // }
+
+        print(){
+            console.log(this.tag);
+            this.tag.forEach(function(val){
+                console.log(val);
+                console.log(this);
+            }, this)
+
+            // nested function point to window so write this end of for each so they point to user   
+        }
+    }
+
+    // console.log(user.full());
+    console.log(user.print());
+
+    //in event listner 
+   const button = document.querySelector('button')
+   const body = document.querySelector('body')
+    // button = document.querySelector('h1')
+
+    body.addEventListener("click", function() {
+        console.log(this); // Output: <button id="myButton">...</button>
+    })
+
+    button.addEventListener("click", function() {
+        console.log(this); // Output: <button id="myButton">...</button>
+    })
+
+    // so in this event jis par event listner laga he usko point out karega  
+
+    // in arrow function are point to window because arrow function not bind in object nd not take as a method 
+
+    const prof = {
+        name : 'raman',
+        cast : 'patil',
+        age : 65,
+        greet: ()=>{
+            console.log(this);
+        }
+    }
+
+    console.log(prof.greet());
+
+    // in class this point to class 
+
+    class detail {
+        constructor() {
+            console.log(this);  
+        }
+    }
+
+    obj = new detail
+    console.log(obj);
+</script>
+</html>
